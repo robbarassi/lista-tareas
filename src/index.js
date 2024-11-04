@@ -1,4 +1,12 @@
-import {saludar} from './js/funciones.js'
 import './styles.css'
+import {Tarea,TareaLista} from './clases'
+import { crearTareaHtml } from './js/funciones'
 
-saludar("Edward");
+export const listaTarea = new TareaLista()
+const tarea = new Tarea("Practicar webpack")
+
+listaTarea.nuevaTarea(tarea);
+
+crearTareaHtml(tarea);
+console.log(listaTarea);
+
