@@ -1,3 +1,5 @@
+import {Tarea} from './tareas.class'
+
 export class TareaLista{
     constructor(){
         //this.tareas = [];
@@ -21,7 +23,7 @@ export class TareaLista{
         }
     }
     eliminarCompletados(){
-        this.tareas = this.tareas.filter(elemento => elemento.completado);
+        this.tareas = this.tareas.filter(elemento => ! elemento.completado);
         this.guardarLocalStorage();
 
     }
@@ -38,5 +40,7 @@ export class TareaLista{
         // }else{
         //     this.tareas = []
         // }
+
+        this.tareas = this.tareas.map(obj => Tarea.fromJson(obj));
     }
 }

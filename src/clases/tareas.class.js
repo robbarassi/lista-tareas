@@ -1,4 +1,15 @@
+
+
 export class Tarea{
+    static fromJson({descripcion, id, completado, fecha}){
+        const tempTarea = new Tarea (descripcion);
+        tempTarea.id = id;
+        tempTarea.completado = completado;
+        tempTarea.fecha = fecha;
+
+        return tempTarea;
+    }
+
     constructor(tarea){
         this.descripcion = tarea;
         this.id = new Date().getTime();
@@ -6,3 +17,5 @@ export class Tarea{
         this.fecha = new Date();
     }
 }
+
+
